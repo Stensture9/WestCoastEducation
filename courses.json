@@ -1,0 +1,152 @@
+[
+  {
+    "kind": "classroom",
+    "Classroom": "Sal 3, Frölunda",
+    "CourseNumber": "NET101",
+    "Title": "Grunderna i C# och .NET",
+    "StartDate": "2026-12-22T00:00:00+01:00",
+    "EndDate": "2027-02-16T00:00:00+01:00",
+    "Teacher": {
+      "KnowledgeArea": "C# och .NET",
+      "FirstName": "Lars",
+      "LastName": "Nilsson",
+      "Phone": "031-123 456",
+      "PersonalNumber": "19750312-1234",
+      "Address": {
+        "Street": "Kungsgatan 12",
+        "PostalCode": "411 19",
+        "City": "Göteborg"
+      }
+    },
+    "Students": [
+      {
+        "FirstName": "Anna",
+        "LastName": "Svensson",
+        "Phone": "0701-111111",
+        "PersonalNumber": "19990214-1111",
+        "Address": {
+          "Street": "Exempelvägen 1",
+          "PostalCode": "412 63",
+          "City": "Göteborg"
+        }
+      },
+      {
+        "FirstName": "Erik",
+        "LastName": "Johansson",
+        "Phone": "0702-222222",
+        "PersonalNumber": "20010530-2222",
+        "Address": {
+          "Street": "Exempelvägen 1",
+          "PostalCode": "412 63",
+          "City": "Göteborg"
+        }
+      },
+      {
+        "FirstName": "Sara",
+        "LastName": "Lindqvist",
+        "Phone": "0703-333333",
+        "PersonalNumber": "19981203-3333",
+        "Address": {
+          "Street": "Exempelvägen 1",
+          "PostalCode": "412 63",
+          "City": "Göteborg"
+        }
+      },
+      {
+        "FirstName": "Omar",
+        "LastName": "Hassan",
+        "Phone": "0704-444444",
+        "PersonalNumber": "20000722-4444",
+        "Address": {
+          "Street": "Exempelvägen 1",
+          "PostalCode": "412 63",
+          "City": "Göteborg"
+        }
+      },
+      {
+        "FirstName": "Lisa",
+        "LastName": "Andersson",
+        "Phone": "0705-555555",
+        "PersonalNumber": "19970909-5555",
+        "Address": {
+          "Street": "Exempelvägen 1",
+          "PostalCode": "412 63",
+          "City": "Göteborg"
+        }
+      },
+      {
+        "FirstName": "Nils",
+        "LastName": "Persson",
+        "Phone": "0706-666666",
+        "PersonalNumber": "20020115-6666",
+        "Address": {
+          "Street": "Exempelvägen 1",
+          "PostalCode": "412 63",
+          "City": "Göteborg"
+        }
+      }
+    ],
+    "Ratings": [
+      5,
+      4,
+      5,
+      4
+    ]
+  },
+  {
+    "kind": "distance",
+    "MeetingLink": "https://westcoast.example/live/web201",
+    "CourseNumber": "WEB201",
+    "Title": "Webbutveckling med ASP.NET",
+    "StartDate": "2026-11-27T00:00:00+01:00",
+    "EndDate": "2027-01-08T00:00:00+01:00",
+    "Teacher": {
+      "KnowledgeArea": "C# och .NET",
+      "FirstName": "Lars",
+      "LastName": "Nilsson",
+      "Phone": "031-123 456",
+      "PersonalNumber": "19750312-1234",
+      "Address": {
+        "Street": "Kungsgatan 12",
+        "PostalCode": "411 19",
+        "City": "Göteborg"
+      }
+    },
+    "Students": [
+      {
+        "FirstName": "Anna",
+        "LastName": "Svensson",
+        "Phone": "0701-111111",
+        "PersonalNumber": "19990214-1111",
+        "Address": {
+          "Street": "Exempelvägen 1",
+          "PostalCode": "412 63",
+          "City": "Göteborg"
+        }
+      },
+      {
+        "FirstName": "Erik",
+        "LastName": "Johansson",
+        "Phone": "0702-222222",
+        "PersonalNumber": "20010530-2222",
+        "Address": {
+          "Street": "Exempelvägen 1",
+          "PostalCode": "412 63",
+          "City": "Göteborg"
+        }
+      },
+      {
+        "FirstName": "Sara",
+        "LastName": "Lindqvist",
+        "Phone": "0703-333333",
+        "PersonalNumber": "19981203-3333",
+        "Address": {
+          "Street": "Exempelvägen 1",
+          "PostalCode": "412 63",
+          "City": "Göteborg"
+        }
+      }
+    ],
+    "Ratings": []
+  }
+]
