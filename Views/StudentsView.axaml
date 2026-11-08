@@ -1,0 +1,48 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:WestCoastEducation.ViewModels"
+             xmlns:models="using:WestCoastEducation.Models"
+             xmlns:views="using:WestCoastEducation.Views"
+             x:Class="WestCoastEducation.Views.StudentsView"
+             x:DataType="vm:StudentsViewModel">
+
+  <Grid ColumnDefinitions="*,16,380">
+
+    <Border Classes="card">
+      <DockPanel>
+        <Grid DockPanel.Dock="Top" ColumnDefinitions="*,Auto" Margin="0,0,0,12">
+          <TextBlock Classes="title" Text="Studenter" VerticalAlignment="Center" />
+          <Button Grid.Column="1" Content="Uppdatera" Command="{Binding LoadCommand}" />
+        </Grid>
+        <TextBlock DockPanel.Dock="Bottom" Classes="muted" Margin="0,12,0,0"
+                   Text="{Binding StatusMessage}" TextWrapping="Wrap" />
+        <ProgressBar DockPanel.Dock="Bottom" IsIndeterminate="True" IsVisible="{Binding IsBusy}" />
+        <ListBox ItemsSource="{Binding Items}">
+          <ListBox.ItemTemplate>
+            <DataTemplate x:DataType="models:Student">
+              <StackPanel Spacing="2" Margin="4">
+                <TextBlock Text="{Binding FullName}" FontWeight="SemiBold" />
+                <TextBlock Classes="muted" Text="{Binding ContactSummary}" TextWrapping="Wrap" />
+              </StackPanel>
+            </DataTemplate>
+          </ListBox.ItemTemplate>
+        </ListBox>
+      </DockPanel>
+    </Border>
+
+    <Border Grid.Column="2" Classes="card">
+      <ScrollViewer>
+        <StackPanel Spacing="12">
+          <TextBlock Classes="title" Text="Ny student" />
+          <views:PersonFieldsView />
+          <StackPanel Orientation="Horizontal" Spacing="8">
+            <Button Classes="primary" Content="Lägg till student" Command="{Binding AddCommand}" />
+            <Button Content="Rensa" Command="{Binding ClearFormCommand}" />
+          </StackPanel>
+        </StackPanel>
+      </ScrollViewer>
+    </Border>
+
+  </Grid>
+
+</UserControl>

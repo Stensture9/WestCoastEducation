@@ -1,0 +1,33 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:WestCoastEducation.ViewModels"
+        xmlns:views="using:WestCoastEducation.Views"
+        x:Class="WestCoastEducation.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Title="WestCoast Education – Administration"
+        Width="1180" Height="760" MinWidth="980" MinHeight="620">
+
+  <DockPanel>
+
+    <Border DockPanel.Dock="Top" Background="{DynamicResource HeaderBrush}" Padding="20,12">
+      <Grid ColumnDefinitions="*,Auto">
+        <TextBlock Classes="header" Text="WestCoast Education – Administration" VerticalAlignment="Center" />
+        <Button Grid.Column="1" Classes="ghost" Content="Byt tema" Command="{Binding ToggleThemeCommand}" />
+      </Grid>
+    </Border>
+
+    <TabControl Margin="16" SelectedIndex="{Binding SelectedTab}">
+      <TabItem Header="Kurser">
+        <views:CoursesView Margin="0,12,0,0" DataContext="{Binding Courses}" />
+      </TabItem>
+      <TabItem Header="Studenter">
+        <views:StudentsView Margin="0,12,0,0" DataContext="{Binding Students}" />
+      </TabItem>
+      <TabItem Header="Lärare">
+        <views:TeachersView Margin="0,12,0,0" DataContext="{Binding Teachers}" />
+      </TabItem>
+    </TabControl>
+
+  </DockPanel>
+
+</Window>

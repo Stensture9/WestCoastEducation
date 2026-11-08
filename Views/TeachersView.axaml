@@ -1,0 +1,62 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:WestCoastEducation.ViewModels"
+             xmlns:models="using:WestCoastEducation.Models"
+             xmlns:views="using:WestCoastEducation.Views"
+             x:Class="WestCoastEducation.Views.TeachersView"
+             x:DataType="vm:TeachersViewModel">
+
+  <Grid ColumnDefinitions="*,16,380">
+
+    <Border Classes="card">
+      <DockPanel>
+        <Grid DockPanel.Dock="Top" ColumnDefinitions="*,Auto" Margin="0,0,0,12">
+          <TextBlock Classes="title" Text="Lärare" VerticalAlignment="Center" />
+          <Button Grid.Column="1" Content="Uppdatera" Command="{Binding LoadCommand}" />
+        </Grid>
+        <TextBlock DockPanel.Dock="Bottom" Classes="muted" Margin="0,12,0,0"
+                   Text="{Binding StatusMessage}" TextWrapping="Wrap" />
+        <ProgressBar DockPanel.Dock="Bottom" IsIndeterminate="True" IsVisible="{Binding IsBusy}" />
+        <ListBox ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedTeacher}">
+          <ListBox.ItemTemplate>
+            <DataTemplate x:DataType="models:Teacher">
+              <StackPanel Spacing="2" Margin="4">
+                <TextBlock Text="{Binding FullName}" FontWeight="SemiBold" />
+                <TextBlock Text="{Binding CompetenceSummary}" TextWrapping="Wrap" />
+                <TextBlock Classes="muted" Text="{Binding ContactSummary}" TextWrapping="Wrap" />
+              </StackPanel>
+            </DataTemplate>
+          </ListBox.ItemTemplate>
+        </ListBox>
+      </DockPanel>
+    </Border>
+
+    <Border Grid.Column="2" Classes="card">
+      <ScrollViewer>
+        <StackPanel Spacing="12">
+          <TextBlock Classes="title" Text="{Binding FormTitle}" />
+
+          <views:PersonFieldsView />
+
+          <!-- kompetensområden -->
+          <StackPanel Spacing="6">
+            <TextBlock Classes="label" Text="Kompetensområden" />
+            <Grid ColumnDefinitions="*,8,Auto">
+              <TextBox Text="{Binding NewCompetence}" />
+              <Button Grid.Column="2" Content="Lägg till" Command="{Binding AddCompetenceCommand}" />
+            </Grid>
+            <ListBox ItemsSource="{Binding Competences}" SelectedItem="{Binding SelectedCompetence}" Height="110" />
+            <Button Content="Ta bort markerat" Command="{Binding RemoveCompetenceCommand}" />
+          </StackPanel>
+
+          <StackPanel Orientation="Horizontal" Spacing="8">
+            <Button Classes="primary" Content="{Binding SaveButtonText}" Command="{Binding SaveCommand}" />
+            <Button Content="Rensa" Command="{Binding ClearFormCommand}" />
+          </StackPanel>
+        </StackPanel>
+      </ScrollViewer>
+    </Border>
+
+  </Grid>
+
+</UserControl>

@@ -1,0 +1,48 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:WestCoastEducation.ViewModels"
+             x:Class="WestCoastEducation.Views.PersonFieldsView"
+             x:DataType="vm:PersonFormViewModelBase">
+
+  <Grid ColumnDefinitions="*,*" ColumnSpacing="12" RowSpacing="10">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <StackPanel Grid.Row="0" Grid.Column="0" Spacing="4">
+      <TextBlock Classes="label" Text="Förnamn" />
+      <TextBox Text="{Binding FirstName}" />
+    </StackPanel>
+    <StackPanel Grid.Row="0" Grid.Column="1" Spacing="4">
+      <TextBlock Classes="label" Text="Efternamn" />
+      <TextBox Text="{Binding LastName}" />
+    </StackPanel>
+
+    <StackPanel Grid.Row="1" Grid.Column="0" Spacing="4">
+      <TextBlock Classes="label" Text="Telefon" />
+      <TextBox Text="{Binding Phone}" />
+    </StackPanel>
+    <StackPanel Grid.Row="1" Grid.Column="1" Spacing="4">
+      <TextBlock Classes="label" Text="Personnummer (ÅÅÅÅMMDD-XXXX)" />
+      <TextBox Text="{Binding PersonalNumber}" />
+    </StackPanel>
+
+    <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Spacing="4">
+      <TextBlock Classes="label" Text="Adress" />
+      <TextBox Text="{Binding Street}" />
+    </StackPanel>
+
+    <StackPanel Grid.Row="3" Grid.Column="0" Spacing="4">
+      <TextBlock Classes="label" Text="Postnummer" />
+      <TextBox Text="{Binding PostalCode}" />
+    </StackPanel>
+    <StackPanel Grid.Row="3" Grid.Column="1" Spacing="4">
+      <TextBlock Classes="label" Text="Ort" />
+      <TextBox Text="{Binding City}" />
+    </StackPanel>
+  </Grid>
+
+</UserControl>
